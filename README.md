@@ -1,14 +1,14 @@
-##NuCounts
+##NuCounts##
 
-#Objetivo
-Fascilitar a divisão de gastos em grupos
+#Objetivo#
+Facilitar a divisão de gastos em grupos
 
-#Arquitetura
+#Arquitetura#
 *Clean architecture
 
-#Tecnologias
+#Tecnologias#
 *Spring Boot
 *MongoDB
 
-#Formatação do Código
+#Formatação do Código#
 *Google Java Format https://github.com/google/google-java-format
