@@ -1,5 +1,8 @@
 # NuCounts
 
+## nc-usuario
+Serviço de usuários do NuCounts
+
 ## Objetivo
 Facilitar a divisão de gastos em grupos
 
