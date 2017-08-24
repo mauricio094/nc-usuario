@@ -18,4 +18,6 @@ public class UsuarioResponse {
         setNome(usuario.getNome());
         setSenha(usuario.getSenha());
     }
+
+
 }
