@@ -4,6 +4,7 @@ import com.ncusuario.domains.Usuario;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 
@@ -12,20 +13,20 @@ import javax.validation.constraints.NotNull;
 @EqualsAndHashCode
 public class UsuarioRequest {
 
-    @NotNull(message = "{validation.field.notnull}")
+    @NotEmpty(message = "{validation.field.notnull}")
     private String email;
 
-    @NotNull(message = "{validation.field.notnull}")
+    @NotEmpty(message = "{validation.field.notnull}")
     private String nome;
 
-    @NotNull(message = "{validation.field.notnull}")
+    @NotEmpty(message = "{validation.field.notnull}")
     private String senha;
 
     public Usuario toDomain() {
         Usuario usuario = new Usuario();
         usuario.setEmail(this.getEmail());
         usuario.setNome(this.getNome());
-        usuario.setNome(this.getSenha());
+        usuario.setSenha(this.getSenha());
         return usuario;
     }
 }
