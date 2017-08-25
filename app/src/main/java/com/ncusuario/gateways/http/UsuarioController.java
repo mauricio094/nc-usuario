@@ -31,7 +31,6 @@ public class UsuarioController {
     )
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity.BodyBuilder saveUser(@RequestBody @Valid final UsuarioRequest usuarioRequest) {
-        saveUsuario.execute(usuarioRequest.toDomain());
         return ResponseEntity.ok();
     }
 
