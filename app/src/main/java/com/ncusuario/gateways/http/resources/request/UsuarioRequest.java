@@ -1,25 +1,23 @@
 package com.ncusuario.gateways.http.resources.request;
 
 import com.ncusuario.domains.Usuario;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.NotNull;
-
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
+@AllArgsConstructor
 public class UsuarioRequest {
 
-    @NotEmpty(message = "{validation.field.notnull}")
+    @NotEmpty
     private String email;
 
-    @NotEmpty(message = "{validation.field.notnull}")
+    @NotEmpty
     private String nome;
 
-    @NotEmpty(message = "{validation.field.notnull}")
+    @NotEmpty
     private String senha;
 
     public Usuario toDomain() {

@@ -10,9 +10,9 @@ import java.io.Serializable;
 @Data
 public class Usuario implements Serializable {
 
+    @Id
     @Getter
     @Setter
-    @Id
     private String email;
     @Getter
     @Setter
