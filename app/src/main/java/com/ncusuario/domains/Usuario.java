@@ -1,13 +1,19 @@
 package com.ncusuario.domains;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+@ToString(exclude = {"lastModifiedDate"})
+@Document(collection = "NuCount-Usuarios")
+@TypeAlias("NuCount-Usuarios")
 public class Usuario implements Serializable {
 
     @Id
@@ -20,5 +26,8 @@ public class Usuario implements Serializable {
     @Getter
     @Setter
     private String senha;
+    @Getter
+    @LastModifiedDate
+    private LocalDate lastModifiedDate;
 
 }

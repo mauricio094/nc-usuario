@@ -11,13 +11,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 @AllArgsConstructor
 public class UsuarioRequest {
 
-    @NotEmpty
+    @NotEmpty(message = "validation.field.notnull")
     private String email;
 
-    @NotEmpty
+    @NotEmpty(message = "validation.field.notnull")
     private String nome;
 
-    @NotEmpty
+    @NotEmpty(message = "validation.field.notnull")
     private String senha;
 
     public Usuario toDomain() {
