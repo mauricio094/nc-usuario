@@ -14,7 +14,8 @@ public class UsuarioGatewayImpl implements UsuarioGateway {
 
     @Override
     public Usuario save(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+        usuarioRepository.save(usuario);
+        return usuario;
     }
 
     @Override

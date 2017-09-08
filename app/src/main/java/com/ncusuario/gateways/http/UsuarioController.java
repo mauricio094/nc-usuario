@@ -1,9 +1,11 @@
 package com.ncusuario.gateways.http;
 
+import com.ncusuario.domains.Usuario;
 import com.ncusuario.gateways.http.resources.request.UsuarioRequest;
 import com.ncusuario.gateways.http.resources.response.UsuarioResponse;
 import com.ncusuario.usecases.FindUsuario;
 import com.ncusuario.usecases.SaveUsuario;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,6 +20,7 @@ import static java.util.Optional.ofNullable;
 @Slf4j
 @RestController
 @RequestMapping("api/v1")
+@AllArgsConstructor
 public class UsuarioController {
 
     private FindUsuario findUsuario;
@@ -30,8 +33,10 @@ public class UsuarioController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity.BodyBuilder saveUser(@RequestBody @Valid final UsuarioRequest usuarioRequest) {
-        return ResponseEntity.ok();
+    public void saveUser(@RequestBody @Valid final UsuarioRequest usuarioRequest) {
+        Usuario user = new Usuario();
+        user = usuarioRequest.toDomain();
+        saveUsuario.execute(user);
     }
 
     @RequestMapping(value = "/user{email}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
