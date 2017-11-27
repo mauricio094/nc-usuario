@@ -6,18 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsuarioRequest {
 
-    @NotEmpty
+    @NotNull(message = "validation.field.notnull")
     private String email;
 
-    @NotEmpty
+    @NotNull(message = "validation.field.notnull")
     private String nome;
 
-    @NotEmpty
+    @NotNull(message = "validation.field.notnull")
     private String senha;
 
     public Usuario toDomain() {
