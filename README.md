@@ -12,6 +12,7 @@ Facilitar a divisão de gastos em grupos
 ## Tecnologias
 * Spring Boot
 * MongoDB
+* Fixture Factory
 
 ## Formatação do Código
 * Google Java Format https://github.com/google/google-java-format
